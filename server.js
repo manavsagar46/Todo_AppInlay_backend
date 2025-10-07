@@ -37,7 +37,12 @@ const connectDB = async () => {
   }
 };
 
-connectDB();
+app.use((req,res,next) => {
+  if(!isConnected){
+    connectDB()
+  }
+  next()
+})
 
 app.use("/task", taskRoutes);
 
