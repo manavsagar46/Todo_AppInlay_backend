@@ -26,7 +26,7 @@ connectDB();
 app.use("/task", taskRoutes);
 
 app.get("/", (req, res) => {
-  res.send("🚀 Server is running and connected to MongoDB!");
+  res.send("Welcome to Todo Backend !!");
 });
 
 const PORT = process.env.PORT || 5000;
